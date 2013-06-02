@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterTrackingService", "MeterTrackingService\MeterTrackingService.csproj", "{2F86E60D-EED3-4847-8809-E64963E8285B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{D64F52A9-AFCF-45BA-942A-D76457F67608}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{2F86E60D-EED3-4847-8809-E64963E8285B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F86E60D-EED3-4847-8809-E64963E8285B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F86E60D-EED3-4847-8809-E64963E8285B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64F52A9-AFCF-45BA-942A-D76457F67608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64F52A9-AFCF-45BA-942A-D76457F67608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64F52A9-AFCF-45BA-942A-D76457F67608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64F52A9-AFCF-45BA-942A-D76457F67608}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

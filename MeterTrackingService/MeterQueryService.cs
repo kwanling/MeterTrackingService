@@ -10,7 +10,21 @@ namespace MeterTrackingService
     {
         public object Any(MeterQuery request)
         {
-            return new MeterQueryResponse { TotalFuelPurchaseAmount = 120.50, CurrentMeterReading = 2000 };
+            // Retrieve PK.
+            var unitNumber = request.UnitNumber;
+
+            // Retrieve obj from IMDB based on PK.            
+            var imdb = (InMemoryDB) Session[unitNumber];
+            if (imdb == null)
+            {
+                imdb = new InMemoryDB();
+            }
+
+            // Return repsonse obj.
+            return new MeterQueryResponse { 
+                TotalFuelPurchaseAmount = imdb.TotalFuelPurchaseAmount, 
+                CurrentMeterReading = imdb.CurrentMeterReading 
+            };
         }
     }
 }
