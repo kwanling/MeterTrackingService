@@ -1,4 +1,5 @@
 ﻿using ServiceStack.ServiceHost;
+using ServiceStack.ServiceInterface.ServiceModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,8 @@ namespace MeterTrackingService
     {
         public double TotalFuelPurchaseAmount { get; set; }
         public int CurrentMeterReading { get; set; }
+
+        // Process exception
+        public ResponseStatus ResponseStatus { get; set; }
     }
 }

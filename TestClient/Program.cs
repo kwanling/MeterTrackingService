@@ -44,16 +44,41 @@ namespace TestClient
 
                 Console.WriteLine("Enter 0 to stop enter meter reading");
                 iter = int.Parse(Console.ReadLine());
+
+                /* Async version
+                client.SendAsync(
+                    new Meter
+                    {
+                        UnitNumber = unitNumber,
+                        Time = dt,
+                        MeterReading = meterReading,
+                        FuelPurchaseAmount = fuelPurchaseAmount
+                    },
+                    meterResponse => {
+                        Console.WriteLine("Enter 0 to stop enter meter reading");
+                        iter = int.Parse(Console.ReadLine());
+                    },
+                    (meterResponse, excpetion) => Console.WriteLine("Error: " + excpetion.Message)
+                );
+                */
+
             }
 
-            var meterQueryResponse = client.Post(
-                new MeterQuery
-                {
-                    UnitNumber = unitNumber
-                });
-
-            Console.WriteLine("CurrentMeterReading : " + meterQueryResponse.CurrentMeterReading);
-            Console.WriteLine("TotalFuelPurchaseAmount : " + meterQueryResponse.TotalFuelPurchaseAmount);
+            MeterQueryResponse meterQueryResponse = null;
+            try
+            {
+                meterQueryResponse = client.Post(
+                    new MeterQuery
+                    {
+                        UnitNumber = unitNumber
+                    });
+                Console.WriteLine("CurrentMeterReading : " + meterQueryResponse.CurrentMeterReading);
+                Console.WriteLine("TotalFuelPurchaseAmount : " + meterQueryResponse.TotalFuelPurchaseAmount);
+            }
+            catch (WebServiceException ex)
+            {
+                Console.WriteLine(ex.ErrorMessage); 
+            }
 
             Console.WriteLine("Enter 0 to exit the program");
             iter = int.Parse(Console.ReadLine());

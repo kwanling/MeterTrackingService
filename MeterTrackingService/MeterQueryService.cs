@@ -20,6 +20,11 @@ namespace MeterTrackingService
                 imdb = new InMemoryDB();
             }
 
+            if (unitNumber == "100")
+            {
+                throw new NotImplementedException("This is a test");
+            }
+
             // Return repsonse obj.
             return new MeterQueryResponse { 
                 TotalFuelPurchaseAmount = imdb.TotalFuelPurchaseAmount, 
