@@ -8,7 +8,7 @@ namespace MeterTrackingService
 {
     [Route("/meter", "POST")]
     [Route("/meter/{UnitNumber}/{Time}/{MeterReading}", "POST")]
-    public class Meter
+    public class Meter : IReturn<MeterResponse>
     {
         public string UnitNumber { get; set; }
         public DateTime Time { get; set; }

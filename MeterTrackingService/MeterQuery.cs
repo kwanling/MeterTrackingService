@@ -7,7 +7,7 @@ using System.Web;
 namespace MeterTrackingService
 {
     [Route("/MeterQuery")]
-    public class MeterQuery
+    public class MeterQuery : IReturn<MeterQueryResponse>
     {
         public string UnitNumber { get; set; }
     }

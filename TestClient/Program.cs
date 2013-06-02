@@ -32,7 +32,7 @@ namespace TestClient
                 Console.WriteLine("Enter Fuel Purchase amount:");
                 fuelPurchaseAmount = double.Parse(Console.ReadLine());
 
-                var response = client.Send<MeterResponse>(
+                var response = client.Send(
                     new Meter
                     {
                         UnitNumber = unitNumber,
@@ -46,8 +46,7 @@ namespace TestClient
                 iter = int.Parse(Console.ReadLine());
             }
 
-            var meterQueryResponse = client.Post<MeterQueryResponse>(
-                "MeterQuery",
+            var meterQueryResponse = client.Post(
                 new MeterQuery
                 {
                     UnitNumber = unitNumber
